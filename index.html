@@ -12,10 +12,10 @@
         const vm = Vue.createApp({
             data() {
                 return {
-                    text: "<p>Hello Vue</p>"
+                    img: "https://media.istockphoto.com/id/1336299043/es/foto/hermosa-toma-a%C3%A9rea-de-bogot%C3%A1-colombia.jpg?s=612x612&w=0&k=20&c=5M76cXWM9jMhwxmtIfOE8gm0WWNeVZtarDzUULzsfYM="
                 }
             },
-            template: `<div v-html="text"></div>`
+            template: `<img v-bind:src="img" v-bind:alt="img"/>`
         }).mount("#app");
     </script>
 </body>
