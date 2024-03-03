@@ -51,7 +51,7 @@
                     <div v-if="open">
                         <p>Hola, {{ username }}</p>
                         <div class="list">
-                            <div v-for="item in posts" class="item">
+                            <div v-for="(item, index) in posts" :key="index" class="item">
                                 <div class="title">{{ item.title }}</div>
                                 <p>{{ item.description }}</p>
                             </div>
