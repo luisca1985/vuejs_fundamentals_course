@@ -12,11 +12,15 @@
         const vm = Vue.createApp({
             data() {
                 return {
-                    attr: "src",
-                    img: "https://media.istockphoto.com/id/1336299043/es/foto/hermosa-toma-a%C3%A9rea-de-bogot%C3%A1-colombia.jpg?s=612x612&w=0&k=20&c=5M76cXWM9jMhwxmtIfOE8gm0WWNeVZtarDzUULzsfYM="
+                    counter: 0
                 }
             },
-            template: `<img v-bind:[attr]="img"/>`
+            methods: {
+                increment(){
+                    console.log("click!")
+                }
+            },
+            template: `<button v-on:click="increment">{{ counter }}</button>`
         }).mount("#app");
     </script>
 </body>
