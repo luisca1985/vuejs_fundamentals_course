@@ -36,7 +36,7 @@
                 }
             },
             template: `
-                <div class="container" :style="styles">
+                <div class="container" :class="{ 'open': open, 'closed': !open }">
                     <h2>{{ text }}</h2>
                     <button @click="open = !open">{{ label }}</button>
                 </div>
@@ -65,7 +65,7 @@
             padding: 8px 24px;
             border-radius: 12px;
         }
-        .close {
+        .closed {
             background-color: #eca1a6;
         }
         .open {
