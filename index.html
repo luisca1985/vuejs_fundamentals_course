@@ -37,6 +37,12 @@
                     <h2>{{ text }}</h2>
                     <div v-if="open">
                         <p>Hola, {{ username }}</p>
+                        <div class="list">
+                            <div class="item">
+                                <div class="title">Un título</div>
+                                <p>Lorem ispsum dolor sit amet</p>
+                            </div>
+                        </div>
                     </div>
                     <div v-else>
                         <label>Username: </label>
@@ -79,6 +85,18 @@
         .open {
             background-color: #b5e7a0;
         }
+        .list {
+            display: flex;
+            flex-direction: column;
+        }
+        .item {
+            border: 1px solid black;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
     </style>
 </body>
 </html>
