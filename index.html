@@ -26,9 +26,6 @@
                 }
             },
             computed: {
-                label(){
-                    return this.open ? "Cerrar" : "Abrir"
-                },
                 styles(){
                     return this.open ?  ['open'] : ['closed']
                 }
@@ -36,7 +33,10 @@
             template: `
                 <div class="container" :class="styles">
                     <h2>{{ text }}</h2>
-                    <button @click="open = !open">{{ label }}</button>
+                    <button @click="open = !open">
+                        <div v-if="!open">Acceder</div>
+                        <div v-else>Salir</div>
+                    </button>
                 </div>
                 
             `
