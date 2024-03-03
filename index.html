@@ -12,23 +12,15 @@
         const vm = Vue.createApp({
             data() {
                 return {
-                    firstName: "Diana",
-                    lastName: "Martinez",
-                    now: new Date()
+                    text: "Hola Vue"
                 }
             },
-            computed: {
-                fullName(){
-                    return `${this.firstName} ${this.lastName}`
-                },
-                today(){
-                    return this.now.toLocaleDateString()
+            watch: {
+                text(value, old){
+                    console.log("Watcher!!", value, old)
                 }
             },
-            template: `
-            <div>{{ fullName }}</div>
-            <div>{{ today }}</div>
-            `
+            template: `{{ text }}`
         }).mount("#app");
     </script>
 </body>
