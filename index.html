@@ -18,6 +18,7 @@
             watch: {
                 text(value, old){
                     console.log("Watcher!!", value, old)
+                    console.log(`text: ${ this.text }`)
                 }
             },
             template: `{{ text }}`
