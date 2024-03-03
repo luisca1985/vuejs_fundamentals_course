@@ -13,10 +13,7 @@
             data() {
                 return {
                     text: "Puerta cerrada",
-                    open: false,
-                    styles: {
-                        backgroundColor: "#eca1a6"
-                    }
+                    open: false
                 }
             },
             watch: {
@@ -33,10 +30,13 @@
             computed: {
                 label(){
                     return this.open ? "Cerrar" : "Abrir"
+                },
+                styles(){
+                    return this.open ?  ['open'] : ['closed']
                 }
             },
             template: `
-                <div class="container" :class="{ 'open': open, 'closed': !open }">
+                <div class="container" :class="styles">
                     <h2>{{ text }}</h2>
                     <button @click="open = !open">{{ label }}</button>
                 </div>
