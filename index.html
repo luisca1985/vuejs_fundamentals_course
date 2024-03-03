@@ -14,7 +14,20 @@
                 return {
                     text: "Puerta cerrada",
                     open: false,
-                    username: ""
+                    username: "",
+                    posts: [{
+                        title: "Titulo 1",
+                        description: "Lorem ipsum...",
+                    }, {
+                        title: "Titulo 2",
+                        description: "Lorem ipsum...",
+                    }, {
+                        title: "Titulo 3",
+                        description: "Lorem ipsum...",
+                    }, {
+                        title: "Titulo 4",
+                        description: "Lorem ipsum...",
+                    }]
                 }
             },
             watch: {
@@ -38,9 +51,9 @@
                     <div v-if="open">
                         <p>Hola, {{ username }}</p>
                         <div class="list">
-                            <div class="item">
-                                <div class="title">Un título</div>
-                                <p>Lorem ispsum dolor sit amet</p>
+                            <div v-for="item in posts" class="item">
+                                <div class="title">{{ item.title }}</div>
+                                <p>{{ item.description }}</p>
                             </div>
                         </div>
                     </div>
